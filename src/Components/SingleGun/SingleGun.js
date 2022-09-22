@@ -2,7 +2,7 @@ import React from 'react';
 import { act } from 'react-dom/test-utils';
 
 const SingleGun = (props) => {
-    const {gun} = props;
+    const {gun, countIncrease} = props;
     console.log(gun)
     const {action, bullet, capacity, category, id, img, name, price} = gun;
     return (
@@ -20,9 +20,14 @@ const SingleGun = (props) => {
             <div className="card-actions">
               <div className="badge badge-outline">{action}</div>
               <div className="badge badge-outline">{bullet}</div>
-              <div className='mt-4'>
-                <button className="btn btn-sm btn-secondary mr-2">Small</button>
-                <button className="btn btn-sm btn-success">Small</button>
+              <div className="mt-4">
+                <button
+                  onClick={()=>countIncrease()}
+                  className="btn btn-sm btn-secondary mr-2"
+                >
+                  Add to cart
+                </button>
+                <button className="btn btn-sm btn-success">Details</button>
               </div>
             </div>
           </div>
